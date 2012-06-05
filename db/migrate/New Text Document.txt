@@ -1,0 +1,4 @@
+
+	
+	
+    create_table :news do |t|

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Djwebsite</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="MenuBar">
+		<div id="MenuBarTop">
+			<div id="MenuBarTopText">
+				<span class="MenuBarTopText"> 
+					Dj Website
+				</span>
+				<span class="MenuBarTopText"> 
+					Biography
+				</span>
+				<span class="MenuBarTopText"> 
+					Calendar
+				</span>
+				<span class="MenuBarTopText"> 
+					Photos
+				</span>
+				<span class="MenuBarTopText"> 
+					Examples
+				</span>
+				<span class="MenuBarTopText"> 
+					Testimonies
+				</span>
+				<span class="MenuBarTopText"> 
+					Enquiries
+				</span>
+			</div>
+		</div>
+		<div id="MenuBarBottom">
+			<div id="MenuBarBottomText">
+				<span>
+					<%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %> 
+				</span>
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<%= yield %>
+	<div>
+</body>
+</html>

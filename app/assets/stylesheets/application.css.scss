@@ -1,0 +1,166 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+body {
+	background-color: #212121;
+	background-image:url("bg-repeat-x-y.png");
+	font-size: 16px;
+	font-family:"Arial","Times New Roman","Comic Sans MS";
+	color: #ffffff;
+	z-index: -10;
+}
+
+a {
+	color: #ffffff;
+	}
+
+a:visited {
+	color: #dddddd;
+	}
+
+a:hover {
+	color: #bbbbbb;
+}
+
+ul li {
+	list-style: none;
+	margin: 0px;	
+	padding: 0px;
+}
+
+.menus {
+	position:inherit;
+	width: 600px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+#MenuBar {
+	position:absolute;
+	left:0px;
+	top:0px;
+	height:100px;
+	width: 100%;
+	background-color:#000000;	
+	z-index: 1;
+}
+
+#MenuBarTop {
+	position:inherit;
+	top: 0%;
+	height: 80%;
+	width: 100%;
+	background-color: #272624;	
+	z-index: 2;
+}
+
+#MenuBarBottom {
+	position:inherit;
+	bottom: 0%;
+	height: 30px;
+	width: 100%;
+	background-color: #000000;
+	z-index: 2;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+#MenuBarTopText {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 15px;
+	width: 975px;
+	z-index: 3;
+	font-size: 20px;
+}
+
+.MenuBarTopText {
+	margin: 20px;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+}
+
+#MenuBarBottomText {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 5px;
+	width: 975px;
+	z-index: 3;
+}
+
+#content {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 105px;
+	width: 975px;
+	height: 800px;
+	background-color:#272624;
+	z-index: 0;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+#LeftBar {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 600px;
+	height: 95%;
+	border-left: 1px solid;
+}
+
+#LeftBarNews {
+	position: absolute;
+	left: 30px;
+	top:350px;
+	height: 20px;
+	width: 500px;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	
+}
+
+#LeftBarPicture{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+	width: 300px;
+	height: 300px;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+#RightBar {
+	position: relative;
+	left: 620px;
+	top: 10px;
+	width: 400px;
+	height: 95%;
+	border-left: 1px solid;
+}
+
+#RightBarEvents {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	height: 20px;
+	width: 300px;
+	border-top: 1px solid;
+	border-bottom: 1px solid;	
+}
