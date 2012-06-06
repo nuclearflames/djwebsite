@@ -6,3 +6,4 @@ class News < ActiveRecord::Base
   def self.user_id
 	user_id = current_user.id
 end
+end
