@@ -1,7 +1,29 @@
 Djwebsite::Application.routes.draw do
+  get "events/index"
+
+  get "events/new"
+
+  get "events/update"
+
+  get "events/create"
+
+  get "events/delete"
+
+  get "events/show"
+
+  get "new/update"
+
+  get "new/create"
+
+  get "new/delete"
+
+  get "new/show"
+
   get "user_sessions/new"
 
   resources :news
+  
+  resources :events
 
   get "home/index"
 

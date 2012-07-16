@@ -1,0 +1,38 @@
+<div id="EventsContent">
+	<h1>Events: Past, Present, Future</h1>
+	<p>View the schedule!</p>
+
+	<table id="TableEventsContent">
+		<% @events.each do |event| %>
+			<tr>
+				<td style="border-top-width:3px;" rowspan="2">
+					<%= event.title %>
+				</td>
+				<td style="width:600px; border-style:none;">
+					<%= link_to 'Edit: '+event.title, edit_event_path(event) %>
+				</td>
+				<td style="border-style:none; width:100px;">
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td style="border-top-width:2px;">
+					<%= event.description %>
+				</td>
+				<td style="border-top-width:2px;">
+					<%= event.event_date.to_s() %>
+				</td>
+			</tr>
+			<tr>
+				<td style="border-style:none;">
+				</td>
+				<td style="border-style:none;">
+					&nbsp;
+				</td>
+			</tr>
+		<% end %>			
+	</table>
+	<% if current_user && current_user.administrator == true %>
+		<%= link_to "Create New Event", :action=>"new" %>
+	<% end %>
+</div>

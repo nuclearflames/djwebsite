@@ -4,14 +4,32 @@
 	</div>
 	<div id="news">
 		<span id="LeftBarNews">
-			News
+			<%= link_to "News", "news" %>
 		</span>
 	</div>
 </div>
 <div id="RightBar">
 	<div>
 		<span id="RightBarEvents">
-			Events
+			<%= link_to "Upcoming Events", "events" %>
+			<%= link_to "New Event", "events/new" %>
+			<table id="TableRightBarEvents">
+				<% @events.each do |event| %>
+					<tr>
+						<th style="border-style:none;" colspan="2">
+							<%= link_to event.title, event_path(event.id) %>
+						</th>
+					</tr>
+					<tr>
+						<td style="width:170px;">
+							<%= event.description %>
+						</td>
+						<td>
+							<%= event.event_date.to_s() %>
+						</td>
+					</tr>
+				<% end %>			
+			</table>
 		</span>
 	</div>
 </div>

@@ -1,0 +1,52 @@
+<% content_for :event_date do %>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/redmond/jquery-ui.css" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js", "application" %>
+<% end %>
+ 
+ <%= form_for(@events, :html => { :multipart => true }) do |f| %>
+  <% if @events.errors.any? %>
+	<div id="EditShowErrorLocation">
+	    <div id="error_explanation">
+	      <h6>There is <%= pluralize(@events.errors.count, "error(s)") %> prohibiting this event from being created:</h6>
+	      <ul>
+		      <% @events.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		      <% end %>
+	      </ul>
+	    </div>
+	</div>	
+  <% end %>
+	<table id="TableEventsContent">
+		<tr>
+			<th>
+				<%= f.label :title %>
+			</th>
+			<td>
+				<%= f.text_field :title, :size=>"130x10" %>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<%= f.label :description, "Details" %>
+			</th>
+			<td>
+				<%= f.text_area :description, :size=>"100x10" %>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<%= f.label :event_date, "Date" %>
+			</th>
+			<td>
+				<%= f.text_field :event_date, :size=>"15" %>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-style:none">
+			</td>
+			<td style="text-align:right; border-style:none">
+				<%= f.submit %>
+			</td>
+		</tr>
+	</table>
+<% end %>

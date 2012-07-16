@@ -3,7 +3,7 @@ class News < ActiveRecord::Base
   
   validates_presence_of :title, :content
   
-  def self.user_id
-	user_id = current_user.id
-end
+	def self.user_id
+		user_id = current_user.id
+	end
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  new: MyString
+  create: MyString
+  update: MyString
+  delete: MyString
+
+two:
+  new: MyString
+  create: MyString
+  update: MyString
+  delete: MyString

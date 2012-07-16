@@ -1,0 +1,32 @@
+<div id="ShowControlsContent">
+	<h1>Showing Event:</h1>
+	<table id="TableShowContent">
+		<tr>
+			<th style="height: 10px;">
+				<h3>Title:</h3>
+			</th>
+			<td style="width:800px;">
+				<h2><%= @event.title %></h2>
+			</td>
+		<tr>
+		</tr>
+			<th style="height: 300px;">
+				<h3>Details:</h3>
+			</th>
+			<td style="">
+				<%= @event.description %>
+			</td>
+		<tr>
+		</tr>
+			<th style="height: 50px;">
+				<h3>Date:</h3>
+			</th>
+			<td style="">
+				<%= @event.event_date %>
+			</td>
+		</tr>
+	</table>
+
+	<%= link_to 'Edit', edit_event_path(@event) %> |
+	<%= link_to 'View Other Events', events_path %>
+</div>
