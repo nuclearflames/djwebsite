@@ -1,25 +1,39 @@
 <%= form_for(@news) do |f| %>
   <% if @news.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
-
-      <ul>
-      <% @news.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+	<div id="NewsErrorPosition">
+		<div id="error_explanation">
+			<h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
+			<ul>
+				<% @news.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<table id="TableNewsContent">
+		<tr>
+			<th>
+				<%= f.label :title %>
+			</th>
+			<td>
+				<%= f.text_field :title, :size=>"130x10" %>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<%= f.label :content, "Details" %>
+			</th>
+			<td>
+				<%= f.text_area :content, :size=>"100x10" %>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-style:none">
+			</td>
+			<td style="text-align:right; border-style:none">
+				<%= f.submit %>
+			</td>
+		</tr>
+	</table>
 <% end %>

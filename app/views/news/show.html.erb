@@ -1,15 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div id="ShowControlsContent">
+	<h1>Showing Event:</h1>
+	<table id="TableShowContent">
+		<tr>
+			<th style="height: 10px;">
+				<h3>Title:</h3>
+			</th>
+			<td style="width:800px;">
+				<h2><%= @news.title %></h2>
+			</td>
+		<tr>
+		</tr>
+			<th style="height: 300px;">
+				<h3>Details:</h3>
+			</th>
+			<td style="">
+				<%= @news.content %>
+			</td>
+		<tr>
+	</table>
 
-<p>
-  <b>Title:</b>
-  <%= @news.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @news.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+	<%= link_to 'Edit', edit_news_path(@news) %> |
+	<%= link_to 'View Other News', news_index_path %>
+</div>
