@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require_tree
 */
 
 body {
@@ -17,12 +17,12 @@ body {
 	background-image:url("bg-repeat-x-y.png");
 	font-size: 16px;
 	font-family:"Arial","Times New Roman","Comic Sans MS";
-	color: #ffffff;
+	color: #C0C0C0;
 	z-index: -10;
 }
 
 a {
-	color: #ffffff;
+	color: #aaaaaa;
 	}
 
 a:visited {
@@ -163,4 +163,175 @@ ul li {
 	width: 300px;
 	border-top: 1px solid;
 	border-bottom: 1px solid;	
+}
+
+#EventsContent {
+	position:absolute;
+	left:10px;
+	top:10px;
+}
+
+#TableEventsContent {
+	position:absolute;
+	top:125px;
+	left:25px;
+	width: 900px;
+	border-width: 0px 2px 0px 2px;
+	border-style: solid;
+}
+
+#TableEventsContent th {
+	text-decoration: underline;
+	text-align: left;
+	border-width: 0px 2px 2px 0px;
+	border-style: solid;
+}
+
+#TableEventsContent td {
+	border-width: 0px 2px 0px 0px;
+	border-style: solid;
+}
+
+#TableRightBarEvents {
+	position:absolute;
+	left: 10px;
+	top:25px;
+	width:275px;
+	border-style:solid;
+	border-width: 1px 0px 2px 0px;
+}
+
+#TableRightBarEvents th {
+	text-decoration: underline;
+	text-align: left;
+	border-width: 0px 2px 2px 0px;
+	border-style: solid;
+}
+
+
+#TableRightBarEvents td {
+	border: solid;
+	height: 20px;
+	border-width: 0px 0px 2px 0px;
+	border-style: solid;
+}
+
+#TableShowContent {
+	position:inherit;
+	top:125px;
+	left:25px;
+	width: 900px;
+	border-width: 0px 2px 0px 2px;
+	border-style: solid;
+}
+
+#TableShowContent th {
+	text-decoration: underline;
+	text-align: center;
+	border-width: 0px 1px 0px 0px;
+	border-style: solid;
+}
+
+#TableShowContent td {
+	border-width: 0px 0px 0px 0px;
+	border-style: solid;
+	text-align: center;
+}
+
+#ShowControlsContent {
+	position:absolute;
+	top:50px;
+	left:10px;
+}
+
+#EditShowErrorLocation {
+	position:absolute;
+	top:500px;
+	left:50px;
+}
+
+#NewsErrorPosition {
+	position:absolute;
+	top:500px;
+	left:50px;
+}
+
+#TableNewsContent {
+	position:absolute;
+	top:125px;
+	left:25px;
+	width: 900px;
+	border-width: 0px 2px 0px 2px;
+	border-style: solid;
+}
+
+#TableNewsContent th {
+	text-decoration: underline;
+	text-align: left;
+	border-width: 0px 2px 2px 0px;
+	border-style: solid;
+}
+
+#TableNewsContent td {
+	border-width: 0px 2px 0px 0px;
+	border-style: solid;
+}
+
+#NewsLeftBarEvents {
+	position:absolute;
+	left: 50px;
+	top:400px;
+	width:450px;
+	border-style:solid;
+	border-width: 1px 0px 2px 0px;
+}
+
+#NewsLeftBarEvents th {
+	text-decoration: underline;
+	text-align: left;
+	border-width: 0px 2px 2px 0px;
+	border-style: solid;
+}
+
+
+#NewsLeftBarEvents td {
+	border: solid;
+	height: 20px;
+	border-width: 0px 0px 2px 0px;
+	border-style: solid;
+}
+
+#NewsContent {
+	position:absolute;
+	left:50px;
+	top:10px;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	width: 850px;
+}
+
+#NewsContentTitle {
+	position:relative;
+	top:5px;
+	left:00px;
+	height: 25px;
+	width: 800px;
+}
+
+#NewsContentContent {
+	position:relative;
+	top:10px;
+	left:10px;
+	background-color: #212121;
+	width: 800px;
+	height: 25px;
+}
+
+#NewsContents {
+	position:relative;
+	left:25px;
+	width: 800px;
+	height: 70px;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
 }
