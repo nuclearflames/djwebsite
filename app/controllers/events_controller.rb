@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
     
+  before_filter :authenticate
+  skip_before_filter :authenticate, :only => ['index', 'show']
+  
   def index
 @events = Event.find(:all, :order => "event_date ASC", :limit => 8)
 	

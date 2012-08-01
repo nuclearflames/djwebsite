@@ -4,7 +4,9 @@
 	</div>
 	<div id="news">
 		<span id="LeftBarNews">
-			<%= link_to "News", "news" %>
+			<%= link_to "Latest News", "news" %>
+			<%= link_to "Create New News", "news/new" if current_user && current_user.administrator == true %>
+			
 		</span>
 			<table id="NewsLeftBarEvents">
 				<% @news.each do |news| %>
@@ -26,7 +28,7 @@
 	<div>
 		<span id="RightBarEvents">
 			<%= link_to "Upcoming Events", "events" %>
-			<%= link_to "New Event", "events/new" %>
+			<%= link_to "Create New Event", "events/new" if current_user && current_user.administrator == true %>
 			<table id="TableRightBarEvents">
 				<% @events.each do |event| %>
 					<tr>

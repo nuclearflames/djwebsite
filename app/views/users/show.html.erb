@@ -1,46 +1,48 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<div id="UserContent">
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<p>
-  <b>Forename:</b>
-  <%= @user.forename %>
-</p>
+	<p>
+	  <b>Forename:</b>
+	  <%= @user.forename %>
+	</p>
 
-<p>
-  <b>Surname:</b>
-  <%= @user.surname %>
-</p>
+	<p>
+	  <b>Surname:</b>
+	  <%= @user.surname %>
+	</p>
 
-<p>
-  <b>Administrator:</b>
-  <%= @user.administrator %>
-</p>
+	<p>
+	  <b>Administrator:</b>
+	  <%= @user.administrator %>
+	</p>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+	<p>
+	  <b>Email:</b>
+	  <%= @user.email %>
+	</p>
 
-<p>
-  <b>Status:</b>
-  <%= @user.activated %>
-</p>
+	<p>
+	  <b>Activated:</b>
+	  <%= @user.activated %>
+	</p>
 
-<p>
-  <b>Alias:</b>
-  <%= @user.alias %>
-</p>
+	<p>
+	  <b>Alias:</b>
+	  <%= @user.alias %>
+	</p>
 
-<p>
-  <b>Aboutme:</b>
-  <%= @user.aboutme %>
-</p>
+	<p>
+	  <b>Aboutme:</b>
+	  <%= @user.aboutme %>
+	</p>
 
-<p>
-  <b>Birthday:</b>
-  <%= @user.birthday %>
-</p>
+	<p>
+	  <b>Birthday:</b>
+	  <%= @user.birthday %>
+	</p>
+</div>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

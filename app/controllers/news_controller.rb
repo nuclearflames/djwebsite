@@ -1,6 +1,10 @@
 class NewsController < ApplicationController
   # GET /news
   # GET /news.json
+  
+  before_filter :authenticate
+  skip_before_filter :authenticate, :only => ['index', 'show']
+  
   def index
     @news = News.all
 
