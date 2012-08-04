@@ -8,20 +8,20 @@
 			<%= link_to "Create New News", "news/new" if current_user && current_user.administrator == true %>
 			
 		</span>
-			<table id="NewsLeftBarEvents">
-				<% @news.each do |news| %>
-					<tr>
-						<th style="border-style:none;" colspan="2">
-							<%= link_to news.title, news_path(news.id) %>
-						</th>
-					</tr>
-					<tr>
-						<td style="width:170px;">
-							<%= news.content %>
-						</td>
-					</tr>
-				<% end %>			
-			</table>
+		<table id="NewsLeftBarEvents">
+			<% @news.each do |news| %>
+				<tr>
+					<th style="border-style:none;" colspan="2">
+						<%= link_to news.title, news_path(news.id) %>
+					</th>
+				</tr>
+				<tr>
+					<td style="width:170px;">
+						<%= news.content %>
+					</td>
+				</tr>
+			<% end %>			
+		</table>
 	</div>
 </div>
 <div id="RightBar">

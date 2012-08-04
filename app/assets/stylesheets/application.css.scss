@@ -117,7 +117,7 @@ ul li {
 
 #LeftBar {
 	position: absolute;
-	top: 10px;
+	top: 0px;
 	left: 10px;
 	width: 600px;
 	height: 95%;
@@ -148,7 +148,7 @@ ul li {
 
 #RightBar {
 	position: relative;
-	left: 620px;
+	left: 600px;
 	top: 10px;
 	width: 400px;
 	height: 95%;
@@ -348,4 +348,36 @@ ul li {
 	width:900px;
 	left:300px;
 	top:20px;
+}
+
+#AlignContent {
+	position:absolute;
+	width:900px;
+	left:10px;
+	top:20px;	
+}
+
+#EnquiresTable {
+	position:absolute;
+	left: 200px;
+	top:50px;
+	width:500px;
+	border-style:solid;
+	border-width: 0px 0px 2px 0px;
+}
+
+#EnquiresTable th {
+	text-decoration: underline;
+	text-align: left;
+	border-width: 0px 1px 1px 0px;
+	border-style: solid;
+}
+
+
+#EnquiresTable td {
+	border: solid;
+	height: 50px;
+	width:350px;
+	border-width: 0px 0px 1px 0px;
+	border-style: solid;
 }

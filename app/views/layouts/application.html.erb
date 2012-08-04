@@ -14,10 +14,10 @@
 					<%= link_to "Dj Website", "/" %>
 				</span>
 				<span class="MenuBarTopText"> 
-					Biography
+					<%= link_to "Biography", biography_index_path %>
 				</span>
 				<span class="MenuBarTopText"> 
-					<%= link_to "Events", "events" %>
+					<%= link_to "Events", events_path %>
 				</span>
 				<span class="MenuBarTopText"> 
 					Photos
@@ -29,7 +29,7 @@
 					Testimonies
 				</span>
 				<span class="MenuBarTopText"> 
-					Enquiries
+					<%= link_to "Enquiries", enquires_index_path %>
 				</span>
 			</div>
 		</div>
@@ -42,7 +42,9 @@
 		</div>
 	</div>
 	<div id="content">
-		<%= yield %>
+		<div id="AlignContent">
+			<%= yield %>
+		</div>
 	<div>
 </body>
 </html>

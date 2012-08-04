@@ -1,4 +1,8 @@
 Djwebsite::Application.routes.draw do
+  get "biography/index"
+
+  get "enquires/index"
+
   get "events/index"
 
   get "events/new"
