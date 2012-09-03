@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Djwebsite</title>
+	<%= stylesheet_link_tag "home", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="mainField">
+		<div id="logo">
+			<%= image_tag('DJ_0000_Logo.png', :class=>"logo") %>
+		</div>
+		<div id="menuBar">
+			<%= image_tag('DJ_0002s_0003_menu1.png', :class=>"menuBars") %>
+			<%= image_tag('DJ_0002s_0002_menu2.png', :class=>"menuBars") %>
+			<%= image_tag('DJ_0002s_0001_menu3.png', :class=>"menuBars") %>
+			<%= image_tag('DJ_0002s_0000_menu4.png', :class=>"menuBars") %>
+		</div>
+		<div id="menuBarBottoms">
+			<%= image_tag('DJ_0001s_0000_drop1.png', :class=>"menuBars") %>
+			<%= image_tag('DJ_0001s_0001_drop2.png', :class=>"menuBars") %>
+			<%= image_tag('DJ_0001s_0002_drop3.png', :class=>"menuBars") %>
+			<%= image_tag('DJ_0001s_0003_drop4.png', :class=>"menuBars") %>
+		</div>
+		<div id="bookNow">
+			<%= image_tag('DJ_0000s_0001_BookNowBG.png', :class=>'bookNow') %>
+			<span id="bookNowText">
+				Book Now
+			</span>
+		</div>
+		<div id="hands">
+			<%= image_tag('DJ_0001_hands.png', :class=>'handsImage') %>
+		</div>
+	</div>
+</body>
+</html>
