@@ -24,6 +24,8 @@ Djwebsite::Application.routes.draw do
   get "new/show"
 
   get "user_sessions/new"
+  
+  get "home/v1"
 
   resources :news
   

@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   skip_before_filter :authenticate, :only => ['index', 'show']
   
   def index
-@events = Event.find(:all, :order => "event_date ASC", :limit => 8)
+@events = Event.find(:all, :order => "event_date ASC", :limit => 5)
 	
     respond_to do |format|
       format.html # index.html.erb

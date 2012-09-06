@@ -1,9 +1,21 @@
 body {
 	background-color: #000000;
-	font-size: 40px;
+	font-size: 12px;
 	font-family:"Arial","Times New Roman","Comic Sans MS";
 	color: #C0C0C0;
 	z-index: -1;
+}
+
+a {
+	color: #aaaaaa;
+	}
+
+a:visited {
+	color: #dddddd;
+	}
+
+a:hover {
+	color: #bbbbbb;
 }
 
 #mainField{
@@ -20,16 +32,6 @@ body {
 	border-bottom: 1px solid;
 }
 
-.menuBars {
-	width:150px;
-}
-
-#menuBar {
-	position:absolute;
-	top:400px;
-	left:330px
-}
-
 #menuBarBottoms {
 	position:absolute;
 	top:460px;
@@ -38,7 +40,7 @@ body {
 
 .logo {
 	position:absolute;
-	top:10px;
+	top:20px;
 	left:10px;
 	height:300px;
 }
@@ -55,6 +57,7 @@ body {
 	left:65px;
 	bottom:80px;
 	z-index:3;
+	font-size: 40px;
 }
 
 #hands { 
@@ -66,4 +69,59 @@ body {
 	z-index: -1;
 	right:0px;
 	bottom:0px;	
+}
+
+.barText {
+	position:absolute;
+	z-index:1;
+	top:10px;
+	font-size:25px;
+}
+
+#aboutUs {
+	left:25px;
+}
+
+#ourNights {
+	left:170px;
+}
+
+#contactUs {
+	left:320px;
+}
+
+#testimonials {
+	left:463px;
+}
+
+ul {
+	position:absolute;
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+
+li {
+	display:inline;
+}
+
+.menuBarsImages, .menuBars{
+	width: 150px;
+}
+
+#menuSelect {
+	left:300px;
+	top:400px;
+}
+
+#menuSelectBars {
+	left: 300px;
+	top: 460px;
+}
+
+#inforBar {
+	position:absolute;
+	bottom:0px;
 }
