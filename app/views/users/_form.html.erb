@@ -49,6 +49,7 @@
 			<%= f.password_field :password_confirmation %>
 		</td>
 	</tr>
+	<% if @user.administrator == true %>
 	<tr>
 		<td>
 			<%= f.label :administrator %>
@@ -57,6 +58,7 @@
 			<%= f.check_box :administrator %>
 		</td>
 	</tr>
+	<% end %>
 	<tr>
 		<td>
 			<%= f.label :email %>
@@ -74,41 +76,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<%= f.label :activated %>
-		</td>
-		<td>
-			<%= f.check_box :activated %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<%= f.label :alias %>
-		</td>
-		<td>
-			<%= f.text_field :alias %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<%= f.label :aboutme %>
-		</td>
-		<td>
-			<%= f.text_area :aboutme, :size=>"24x5" %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<%= f.label :birthday %>
-		</td>
-		<td>
-			<%= f.text_field :birthday, :size=>"15" %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-		</td>
-		<td>
+		<td colspan="2">
 			<%= f.submit %>
 		</td>
 	</tr>

@@ -6,12 +6,40 @@ class UserSessionsController < ApplicationController
 	end
 	
 	def create
-	@user_session = UserSession.new(params[:user_session])
-		if @user_session.save
-			redirect_to user_path(current_user)
-		else
-			render :action => :new
-		end
+		if !current_user
+			@user = User.find_by_email(params['user_session'].values)
+			@user_session = UserSession.new(params[:user_session])
+			if @user
+				if @user.activated == false
+					redirect_to login_path
+					flash[:notice] = 'Activate your account to log in.'
+				elsif @user.activated != false and @user_session.save
+					redirect_to user_path(current_user)
+					flash[:notice] = 'Logged in.'
+				else
+					redirect_to login_path
+					flash[:notice] = 'Failed Log in.'
+				end
+			else
+				redirect_to login_path
+				flash[:notice] = 'Failed Log in.'
+			end
+		else current_user
+			if current_user.activated == false
+				current_user_session.destroy
+				redirect_to login_path
+			else
+				@user_session = UserSession.new(params[:user_session])
+				if @user_session.save
+					session[:edit] = true;
+					redirect_to edit_path				
+					flash.now[:notice] = 'Activated edit attempt.'
+				else
+					redirect_to login_path
+					flash.now[:notice] = 'Failed edit login attempt.'
+				end
+			end
+		end	
 	end
 	
 	def destroy

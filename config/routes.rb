@@ -33,6 +33,8 @@ Djwebsite::Application.routes.draw do
 
   get "home/index"
 
+post "enquires/index"
+
   resource :user_session
   resources :users
   
@@ -95,5 +97,5 @@ Djwebsite::Application.routes.draw do
 	match "/"  => "home#index", :as => "home"
 	match "/login" => "user_sessions#new", :as => 'login'
 	match "/logout" => "user_sessions#destroy", :as => "logout"
-  
+	match '/users/new?code=' => 'users#new'
 end

@@ -26,12 +26,33 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    @user = User.new
+	if current_user 
+		@user = User.find(current_user) 
+	end
+	if !params[:code]
+	    @user = User.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
+	    respond_to do |format|
+	      format.html # new.html.erb
+	      format.json { render json: @user }
+	    end
+    
+	else code = params[:code]
+		if code
+			code_components = code.split(/_/)
+			if code_components.length == 2
+				@user = User.find(code_components[0])
+				if @user and @user.verify_id_digest(code_components[1])
+					@user.activated = true
+					@user.save
+					respond_to do |format|
+						flash[:notice] = 'Welcome! You are a valid user, you can now logon.'
+						format.html {redirect_to(:controller => 'home', :action => 'index')}
+					end
+				end
+			end
+		end	
+	end	    
   end
 
   # GET /users/1/edit
@@ -47,6 +68,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
 	{:action=> "logout"}
+	RegistrationMailer.registration_email(@user).deliver
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
