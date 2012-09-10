@@ -33,7 +33,9 @@ Djwebsite::Application.routes.draw do
 
   get "home/index"
 
-post "enquires/index"
+get "enquies/index"
+
+post "enquires/new"
 
   resource :user_session
   resources :users

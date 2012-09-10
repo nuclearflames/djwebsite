@@ -1,49 +1,10 @@
 <div id="UserContent">
-	<p id="notice">
-		<%= notice %>
-	</p>
-
-	<p>
-	  <b>Forename:</b>
-	  <%= @user.forename %>
-	</p>
-
-	<p>
-	  <b>Surname:</b>
-	  <%= @user.surname %>
-	</p>
-
-	<p>
-	  <b>Administrator:</b>
-	  <%= @user.administrator %>
-	</p>
-
-	<p>
-	  <b>Email:</b>
-	  <%= @user.email %>
-	</p>
-
-	<p>
-	  <b>Activated:</b>
-	  <%= @user.activated %>
-	</p>
-
-	<p>
-	  <b>Alias:</b>
-	  <%= @user.alias %>
-	</p>
-
-	<p>
-	  <b>Aboutme:</b>
-	  <%= simple_format h(@user.aboutme) %>
-	</p>
-
-	<p>
-	  <b>Birthday:</b>
-	  <%= @user.birthday %>
-	</p>
+	<span>
+		Welcome <%= @user.forename %> <%= @user.surname %>
+	</span>
 </div>
+<span>
+	<%= link_to 'Edit Your Account', edit_user_path(@user) %>
+</span>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

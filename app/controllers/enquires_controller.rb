@@ -1,7 +1,10 @@
 class EnquiresController < ApplicationController
 	def index
-		EnquiresForm.make_enquiry(params[:enquires][:description]).deliver
-		flash.now[:notice] = "Enquiry Sent, thank you"
 	end
-
+	
+	def new
+		EnquiresForm.make_enquiry(params[:enquires][:description]).deliver
+		redirect_to :action => "index"
+		flash[:notice] = "Enquiry Sent, thank you"
+	end
 end

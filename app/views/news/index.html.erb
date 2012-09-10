@@ -1,20 +1,21 @@
-<div id="NewsContent">
+<div id="indexContent">
 	<h1>Recent News</h1>
 	<% @news.each do |news| %>
-		<div id="NewsContents">
-			<div id="NewsContentTitle">
-				<%= news.title %>
+		<div id="indexContents">
+			<div id="indexContentTitle">
+				<%= link_to news.title, news_path(news) %>
 			</div>
-			<div id="NewsContentContent">
+			<div id="indexContentContent">
 				<%= news.content %>
-				<%= link_to 'Edit', edit_news_path(news) %>
-				<%= button_to 'Delete', news, :confirm => 'Are you sure?', :method => :delete %>
+				<% if isAdmin %>
+					<%= link_to 'Edit', edit_news_path(news) %>
+				<% end %>
 			</div>
+			<br />
 		</div>
 	<% end %>
-
 	<br />
-
-	<%= link_to 'Create', new_news_path %>
-
+	<% if isAdmin %>
+		<%= link_to 'Create', new_news_path %>
+	<% end %>
 </div>
