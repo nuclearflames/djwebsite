@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Djwebsite</title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="MenuBar">
+		<div id="MenuBarTop">
+			<div id="MenuBarTopText">
+				<span class="MenuBarTopText"> 
+					<%= link_to "Dj Website", "/" %>
+				</span>
+				<span class="MenuBarTopText"> 
+					<%= link_to "Biography", biography_index_path %>
+				</span>
+				<span class="MenuBarTopText"> 
+					<%= link_to "Events", events_path %>
+				</span>
+				<span class="MenuBarTopText"> 
+					Photos
+				</span>
+				<span class="MenuBarTopText"> 
+					Samples
+				</span>
+				<span class="MenuBarTopText"> 
+					Testimonies
+				</span>
+				<span class="MenuBarTopText"> 
+					<%= link_to "Enquiries", enquires_index_path %>
+				</span>
+			</div>
+		</div>
+		<div id="MenuBarBottom">
+			<div id="MenuBarBottomText">
+				<span>
+					<%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>  | <%= link_to "New Layout", "/" %>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<div id="AlignContent">
+			<%= yield %>
+		</div>
+	<div>
+</body>
+</html>

@@ -1,36 +1,23 @@
 <h1>Events: Past, Present, Future</h1>
 <p>View the schedule!</p>
-
-<table id="TableEventsContent">
 	<% @events.each do |event| %>
-		<tr>
-			<td style="border-top-width:3px;" rowspan="2">
-				<%= event.title %>
-			</td>
-			<td style="width:600px; border-style:none;">
-				<%= link_to 'Edit: '+event.title, edit_event_path(event) %>
-			</td>
-			<td style="border-style:none; width:100px;">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td style="border-top-width:2px;">
+		<div id="indexContents">
+			<div id="indexContentTitle">
+				<%= link_to event.title, event_path(event) %>
+			</div>
+			<div id="indexContentContent">
 				<%= event.description %>
-			</td>
-			<td style="border-top-width:2px;">
-				<%= event.event_date.to_s() %>
-			</td>
-		</tr>
-		<tr>
-			<td style="border-style:none;">
-			</td>
-			<td style="border-style:none;">
-				&nbsp;
-			</td>
-		</tr>
-	<% end %>			
-</table>
-<% if current_user && current_user.administrator == true %>
+				<span id="eventTime">
+					<%= event.event_date.to_s() %>
+				</span>
+				<% if isAdmin %>
+					<%= link_to 'Edit '+event.title, edit_event_path(event) %>
+				<% end %>
+			</div>
+			<br />
+		</div>
+	<% end %>
+	<br />
+<% if isAdmin %>
 	<%= link_to "Create New Event", :action=>"new" %>
 <% end %>

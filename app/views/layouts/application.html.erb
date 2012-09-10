@@ -7,44 +7,61 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="MenuBar">
-		<div id="MenuBarTop">
-			<div id="MenuBarTopText">
-				<span class="MenuBarTopText"> 
-					<%= link_to "Dj Website", "/" %>
-				</span>
-				<span class="MenuBarTopText"> 
-					<%= link_to "Biography", biography_index_path %>
-				</span>
-				<span class="MenuBarTopText"> 
-					<%= link_to "Events", events_path %>
-				</span>
-				<span class="MenuBarTopText"> 
-					Photos
-				</span>
-				<span class="MenuBarTopText"> 
-					Samples
-				</span>
-				<span class="MenuBarTopText"> 
-					Testimonies
-				</span>
-				<span class="MenuBarTopText"> 
-					<%= link_to "Enquiries", enquires_index_path %>
-				</span>
-			</div>
+	<div id="mainField">
+		<div id="logo">
+			<%= image_tag('DJ_0000_Logo.png', :class=>"logo") %>
 		</div>
-		<div id="MenuBarBottom">
-			<div id="MenuBarBottomText">
-				<span>
-					<%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>  | <%= link_to "New Layout", "/" %>
-				</span>
-			</div>
-		</div>
-	</div>
-	<div id="content">
-		<div id="AlignContent">
+		<div id="yield">
 			<%= yield %>
 		</div>
-	<div>
+		<ul id="menuSelect">
+			<li>
+				<%= link_to image_tag('DJ_0002s_0003_menu1.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+				<%= link_to('About Us', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"aboutUs"}) %>
+			</li>
+			<li>
+				<%= link_to image_tag('DJ_0002s_0002_menu2.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+				<%= link_to('Our Nights', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"ourNights"}) %>
+			</li>
+			<li>
+				<%= link_to image_tag('DJ_0002s_0001_menu3.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+				<%= link_to('Contact Us', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"contactUs"}) %>
+			</li>
+			<li>
+				<%= link_to image_tag('DJ_0002s_0000_menu4.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+				<%= link_to('Testimonials', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"testimonials"}) %>
+			</li>
+		</ul>
+		<ul id="menuSelectBars">
+			<li>
+			<%= image_tag('DJ_0001s_0000_drop1.png', :class=>"menuBars") %>
+			</li>
+			<li>
+			<%= image_tag('DJ_0001s_0001_drop2.png', :class=>"menuBars") %>
+			</li>
+			<li>
+			<%= image_tag('DJ_0001s_0002_drop3.png', :class=>"menuBars") %>
+			</li>
+			<li>
+			<%= image_tag('DJ_0001s_0003_drop4.png', :class=>"menuBars") %>
+			</li>
+		</ul>
+		<div id="bookNow">
+			<%= image_tag('DJ_0000s_0001_BookNowBG.png', :class=>'bookNow') %>
+			<%= link_to('Book Now', {:action => "index", :controller => "enquires"}, :id=>"bookNowText") %>
+			
+		</div>
+		<div id="hands">
+			<%= image_tag('DJ_0001_hands.png', :class=>'handsImage') %>
+		</div>
+		<div id="infoBar">
+			<span>
+				<%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>
+			</span>
+			<span id="notice">
+				| <%= notice %>
+			</span>
+		</div>
+	</div>
 </body>
 </html>

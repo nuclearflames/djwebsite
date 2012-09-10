@@ -1,51 +1,65 @@
-<div id="LeftBar">
+<div id="leftBar">
 	<div id="LeftBarPicture">
 
 	</div>
 	<div id="news">
-		<span id="LeftBarNews">
-			<%= link_to "Latest News", "news" %>
-			<%= link_to "Create New News", "news/new" if current_user && current_user.administrator == true %>
-			
+		<span class="headers">
+			<%= link_to "Latest News", "news" %>			
 		</span>
-		<table id="NewsLeftBarEvents">
+		<table class="tableNews">
 			<% @news.each do |news| %>
 				<tr>
-					<th style="border-style:none;" colspan="2">
+					<th>
 						<%= link_to news.title, news_path(news.id) %>
 					</th>
 				</tr>
 				<tr>
-					<td style="width:170px;">
-						<%= news.content %>
+					<td class="tableBottomBorders">
+						<span class="tableTD">
+							<%= news.content %>
+						</span>
 					</td>
 				</tr>
-			<% end %>			
-		</table>
+			<% end %>	
+			<tr>
+				<td>
+					<%= link_to "Create New News", "news/new" if current_user && current_user.administrator == true %>
+				</td>
+			</tr>
+		</table>		
 	</div>
 </div>
-<div id="RightBar">
+<div id="rightBar">
 	<div>
-		<span id="RightBarEvents">
+		<span class="headers">
 			<%= link_to "Upcoming Events", "events" %>
-			<%= link_to "Create New Event", "events/new" if current_user && current_user.administrator == true %>
-			<table id="TableRightBarEvents">
-				<% @events.each do |event| %>
-					<tr>
-						<th style="border-style:none;" colspan="2">
-							<%= link_to event.title, event_path(event.id) %>
-						</th>
-					</tr>
-					<tr>
-						<td style="width:170px;">
-							<%= event.description %>
-						</td>
-						<td>
-							<%= event.event_date.to_s() %>
-						</td>
-					</tr>
-				<% end %>			
-			</table>
 		</span>
+		<table class="tableNews">
+			<% @events.each do |event| %>
+				<tr>
+					<th>
+						<%= link_to event.title, event_path(event.id) %>
+					</th>
+				</tr>
+				<tr>
+					<td class="tableBottomBorders">
+						<span class="tableTD" id="eventDescription">
+							<%= event.description %>
+						</span>
+						<br />
+						<span class="tableTD" id="eventDate">
+							<%= event.event_date.to_s() %>
+						</span>
+					</td>
+				</tr>
+			<% end %>
+				<tr>
+					<td>
+						<span>
+							<%= link_to "Create New Event", "events/new" if current_user && current_user.administrator == true %>
+						</span>
+					</td>
+				</tr>
+		</table>
 	</div>
 </div>
