@@ -14,38 +14,44 @@
 		<div id="yield">
 			<%= yield %>
 		</div>
-		<ul id="menuSelect">
-			<li>
-				<%= link_to image_tag('DJ_0002s_0003_menu1.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
-				<%= link_to('About Us', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"aboutUs"}) %>
-			</li>
-			<li>
-				<%= link_to image_tag('DJ_0002s_0002_menu2.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
-				<%= link_to('Our Nights', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"ourNights"}) %>
-			</li>
-			<li>
-				<%= link_to image_tag('DJ_0002s_0001_menu3.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
-				<%= link_to('Contact Us', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"contactUs"}) %>
-			</li>
-			<li>
-				<%= link_to image_tag('DJ_0002s_0000_menu4.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
-				<%= link_to('Testimonials', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"testimonials"}) %>
-			</li>
-		</ul>
-		<ul id="menuSelectBars">
-			<li>
-			<%= image_tag('DJ_0001s_0000_drop1.png', :class=>"menuBars") %>
-			</li>
-			<li>
-			<%= image_tag('DJ_0001s_0001_drop2.png', :class=>"menuBars") %>
-			</li>
-			<li>
-			<%= image_tag('DJ_0001s_0002_drop3.png', :class=>"menuBars") %>
-			</li>
-			<li>
-			<%= image_tag('DJ_0001s_0003_drop4.png', :class=>"menuBars") %>
-			</li>
-		</ul>
+		<div id="mainMenu">
+			<div id="menuSelect">
+				<ul>
+					<li>
+						<%= link_to image_tag('DJ_0002s_0003_menu1.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+						<%= link_to('About Us', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"aboutUs"}) %>
+					</li>
+					<li>
+						<%= link_to image_tag('DJ_0002s_0002_menu2.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+						<%= link_to('Our Nights', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"ourNights"}) %>
+					</li>
+					<li>
+						<%= link_to image_tag('DJ_0002s_0001_menu3.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+						<%= link_to('Contact Us', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"contactUs"}) %>
+					</li>
+					<li>
+						<%= link_to image_tag('DJ_0002s_0000_menu4.png', :class=>"menuBarsImages"), :action => "index", :controller => "biography" %>
+						<%= link_to('Testimonials', {:action => "index", :controller => "biography"}, {:class=>"barText", :id=>"testimonials"}) %>
+					</li>
+				</ul>
+			</div>
+			<div id="menuSelectBars">
+				<ul>
+					<li>
+					<%= image_tag('DJ_0001s_0000_drop1.png', :class=>"menuBars") %>
+					</li>
+					<li>
+					<%= image_tag('DJ_0001s_0001_drop2.png', :class=>"menuBars") %>
+					</li>
+					<li>
+					<%= image_tag('DJ_0001s_0002_drop3.png', :class=>"menuBars") %>
+					</li>
+					<li>
+					<%= image_tag('DJ_0001s_0003_drop4.png', :class=>"menuBars") %>
+					</li>
+				</ul>
+			</div>
+		</div>
 		<div id="bookNow">
 			<%= image_tag('DJ_0000s_0001_BookNowBG.png', :class=>'bookNow') %>
 			<%= link_to('Book Now', {:action => "index", :controller => "enquires"}, :id=>"bookNowText") %>

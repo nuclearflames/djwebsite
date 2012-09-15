@@ -57,7 +57,13 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+	if session[:edit] == nil
+		redirect_to "/login"
+		session[:edit] == false
+		flash[:notice] = "Re-sign in to validate your right to make edits"
+	elsif session[:edit] == true
+		@user = User.find(params[:id])
+	end
   end
 
   # POST /users
@@ -87,6 +93,7 @@ class UsersController < ApplicationController
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
+	session[:edit] = nil
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }

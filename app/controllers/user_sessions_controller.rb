@@ -28,15 +28,16 @@ class UserSessionsController < ApplicationController
 			if current_user.activated == false
 				current_user_session.destroy
 				redirect_to login_path
+				flash[:notice] = "Your account needs re-activating"
 			else
 				@user_session = UserSession.new(params[:user_session])
 				if @user_session.save
 					session[:edit] = true;
-					redirect_to edit_path				
-					flash.now[:notice] = 'Activated edit attempt.'
+					redirect_to edit_user_path(current_user)
+					flash[:notice] = 'Validated edit attempt.'
 				else
 					redirect_to login_path
-					flash.now[:notice] = 'Failed edit login attempt.'
+					flash[:notice] = 'Failed edit login attempt.'
 				end
 			end
 		end	

@@ -1,10 +1,16 @@
 <div id="UserContent">
-	<span>
-		Welcome <%= @user.forename %> <%= @user.surname %>
-	</span>
+	<p>
+		<%= @user.forename %> <%= @user.surname %>
+	</p>
+	<p>
+		About me: <%= @user.aboutus %>
+	</p>
 </div>
-<span>
-	<%= link_to 'Edit Your Account', edit_user_path(@user) %>
-</span>
 
+
+<% if isAdmin %>
+	<span>
+		<%= link_to 'Edit Your Account', edit_user_path(@user) %>
+	</span>
+<% end %>
 

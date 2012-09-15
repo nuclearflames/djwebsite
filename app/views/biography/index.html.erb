@@ -1,2 +1,4 @@
-<h1>About Me: <%= @owner.forename %></h1>
-<%= @owner.aboutme %>
+<h1>About Us:</h1>
+<div id="aboutustext">
+	<%= simple_format(@owner.aboutus) %>
+</div>

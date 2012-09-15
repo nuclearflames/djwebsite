@@ -18,6 +18,35 @@ a:hover {
 	color: #bbbbbb;
 }
 
+#error_explanation {
+	position:absolute;
+	bottom: 0px;
+}
+
+#error_explanation {
+	width: 450px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 0;
+	background-color: #610B21;
+	h2 {
+		text-align: left;
+		font-weight: bold;
+		padding: 0px 5px 5px 15px;
+		font-size: 12px;
+		margin-bottom: 0px;
+		background-color: #c00;
+		color: #fff; 
+	}
+	ul li {
+		font-size: 12px;
+		list-style: square;
+		color: #dd0022;
+		display:block;
+		} 
+}
+
+
 #mainField{
 	position: relative;
 	margin-left: auto;
@@ -94,7 +123,14 @@ a:hover {
 	left:463px;
 }
 
-ul {
+#mainMenu {
+	position:absolute;
+	right:0px;
+	bottom:350px;
+	width:650px;
+}
+
+#mainMenu ul {
 	position:absolute;
 	float:left;
 	width:100%;
@@ -103,24 +139,18 @@ ul {
 	list-style-type:none;
 }
 
-li {
+#mainMenu li {
 	display:inline;
 }
 
 .menuBarsImages, .menuBars{
 	width: 150px;
-}
-
-#menuSelect {
-	left:300px;
-	top:400px;
-	width:650px;
+	border:none;
 }
 
 #menuSelectBars {
-	left: 300px;
-	top: 460px;
-	width:650px;
+	position:relative;
+	top:60px;
 }
 
 #infoBar {
@@ -215,4 +245,30 @@ li {
 #eventTime {
 	position:absolute;
 	right:0px;
+}
+
+.userInformation {
+	position:absolute;
+	top:100px;
+	width:200px;
+}
+
+#editSubmit {
+	position:absolute;
+	bottom:50px;
+}
+
+#editMenu {
+	position:absolute;
+	right:0px;
+	width:200px;
+}
+
+#editMenu li {
+	display:block;
+}
+
+#aboutustext {
+	width:400px;
+	height: 350px;
 }

@@ -1,0 +1,74 @@
+<% content_for :birthday do %>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/redmond/jquery-ui.css" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js", "application" %>
+<% end %>
+ 
+ <%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<div id="editMenu">
+		<ol>
+			<li>
+				<%= link_to "Change Basic Information", edit_user_path(@user, :edit => "info")  %>
+			</li>
+			<li>	
+				<%= link_to "Change Password", edit_user_path(@user, :edit => "password")  %>
+			</li>
+			<li>	
+				<%= link_to "Change About Us Page", edit_user_path(@user, :edit => "aboutus")  %>
+			</li>
+			<li>
+				<% if isAdmin %><%= link_to "Change Admin Details", edit_user_path(@user, :edit=> "administrator") %><% end %>
+			</li>
+			<li>
+		</ol>
+	</div>
+	<div>
+		<% if params[:edit] == nil || params[:edit] == "info" %>
+			<div class="userInformation">
+				<%= f.label :forename %>
+				<%= f.text_field :forename %>
+				<%= f.label :surname %>
+				<%= f.text_field :surname %>
+				<%= f.submit "Update Details" %>
+			</div>
+			<% end %>
+			<% if params[:edit] == "password" %>
+			<div class="userInformation">
+				<%= f.label :Password %>
+				<%= f.password_field :password %>
+				<%= f.label :"Confirm Password" %>
+				<%= f.password_field :password_confirmation %>
+				<%= f.submit "Update Details" %>
+			</div>
+			<% end %>
+			<% if params[:edit] == "aboutus" %>
+			<div class="userInformation">
+				<%= f.label :About_Us %>
+				<%= f.text_area :aboutus, :cols => 35, :rows => 13 %>
+				<%= f.submit "Update Details" %>	
+			</div>
+			<% end %>
+			<% if isAdmin && params[:edit] == "administrator" %>
+			<div class="userInformation">
+					<%= f.label :administrator %>
+					<%= f.check_box :administrator %>
+					<br />
+					<%= f.label :email %>
+					<%= f.text_field :email %>
+					<%= f.label :email_confirmation %>
+					<%= f.text_field :email_confirmation %>
+					<%= f.submit "Update Details", :name => 'emailconfirmation[save]' %>
+			</div>
+		<% end %>
+	</div>
+<% end %>
