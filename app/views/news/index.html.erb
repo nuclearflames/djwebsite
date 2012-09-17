@@ -9,6 +9,7 @@
 				<%= news.content %>
 				<% if isAdmin %>
 					<%= link_to 'Edit', edit_news_path(news) %>
+			<%= button_to 'Delete', news_path(news), :method => 'delete' %>
 				<% end %>
 			</div>
 			<br />

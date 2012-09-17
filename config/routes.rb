@@ -1,4 +1,12 @@
 Djwebsite::Application.routes.draw do
+  get "aboutus/index"
+
+  get "testimonials/index"
+
+  get "contactus/index"
+
+  get "ournights/index"
+
   get "biography/index"
 
   get "enquires/index"

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	end
 	
 	
-	attr_accessible :aboutme, :administrator, :alias, :birthday, :email, :forename, :activated, :surname, :password, :password_confirmation, :email_confirmation
+	attr_accessible :aboutus, :administrator, :alias, :birthday, :email, :forename, :activated, :surname, :password, :password_confirmation, :email_confirmation, :ournights, :contactus
   
 	validates_presence_of :forename, :surname, :password, :password_confirmation, :email, :email_confirmation,  :on => :create
 	validates_presence_of :forename, :surname, :email, :on => :update

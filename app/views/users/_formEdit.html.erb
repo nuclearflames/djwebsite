@@ -23,13 +23,18 @@
 			<li>	
 				<%= link_to "Change Password", edit_user_path(@user, :edit => "password")  %>
 			</li>
-			<li>	
-				<%= link_to "Change About Us Page", edit_user_path(@user, :edit => "aboutus")  %>
-			</li>
 			<li>
 				<% if isAdmin %><%= link_to "Change Admin Details", edit_user_path(@user, :edit=> "administrator") %><% end %>
 			</li>
-			<li>
+			<li>	
+				<%= link_to "Change About Us Page", edit_user_path(@user, :edit => "aboutus")  %>
+			</li>
+			<li>	
+				<%= link_to "Change Our Nights Page", edit_user_path(@user, :edit => "ournights")  %>
+			</li>
+			<li>	
+				<%= link_to "Change Contact Us Page", edit_user_path(@user, :edit => "contactus")  %>
+			</li>
 		</ol>
 	</div>
 	<div>
@@ -51,24 +56,40 @@
 				<%= f.submit "Update Details" %>
 			</div>
 			<% end %>
-			<% if params[:edit] == "aboutus" %>
-			<div class="userInformation">
-				<%= f.label :About_Us %>
-				<%= f.text_area :aboutus, :cols => 35, :rows => 13 %>
-				<%= f.submit "Update Details" %>	
-			</div>
-			<% end %>
-			<% if isAdmin && params[:edit] == "administrator" %>
-			<div class="userInformation">
-					<%= f.label :administrator %>
-					<%= f.check_box :administrator %>
-					<br />
-					<%= f.label :email %>
-					<%= f.text_field :email %>
-					<%= f.label :email_confirmation %>
-					<%= f.text_field :email_confirmation %>
-					<%= f.submit "Update Details", :name => 'emailconfirmation[save]' %>
-			</div>
+			<% if isAdmin %>
+				<% if params[:edit] == "aboutus" %>
+					<div class="userInformation">
+						<%= f.label :About_Us %>
+						<%= f.text_area :aboutus, :cols => 35, :rows => 13 %>
+						<%= f.submit "Update Details" %>	
+					</div>
+				<% end %>
+				<% if params[:edit] == "ournights" %>
+					<div class="userInformation">
+						<%= f.label "Edit Our Nights:" %>
+						<%= f.text_area :ournights, :cols => 35, :rows => 13 %>
+						<%= f.submit "Update Details" %>	
+					</div>
+				<% end %>
+				<% if params[:edit] == "contactus" %>
+					<div class="userInformation">
+						<%= f.label "Edit Contact Us Page:" %>
+						<%= f.text_area :contactus, :cols => 35, :rows => 13 %>
+						<%= f.submit "Update Details" %>	
+					</div>
+				<% end %>
+				<% if params[:edit] == "administrator" %>
+					<div class="userInformation">
+							<%= f.label :administrator %>
+							<%= f.check_box :administrator %>
+							<br />
+							<%= f.label :email %>
+							<%= f.text_field :email %>
+							<%= f.label :email_confirmation %>
+							<%= f.text_field :email_confirmation %>
+							<%= f.submit "Update Details", :name => 'emailconfirmation[save]' %>
+					</div>
+				<% end %>
 		<% end %>
 	</div>
 <% end %>

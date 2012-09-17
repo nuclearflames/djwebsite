@@ -11,7 +11,9 @@
 					<%= event.event_date.to_s() %>
 				</span>
 				<% if isAdmin %>
+					<br />
 					<%= link_to 'Edit '+event.title, edit_event_path(event) %>
+					<%= button_to 'Delete', event_path(event), :method => 'delete' %>
 				<% end %>
 			</div>
 			<br />
