@@ -3,7 +3,7 @@
 		<%= @user.forename %> <%= @user.surname %>
 	</p>
 	<p>
-		About me: <%= @user.aboutus %>
+		About me: <%= simple_format(@user.aboutus) %>
 	</p>
 </div>
 

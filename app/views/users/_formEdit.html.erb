@@ -60,21 +60,21 @@
 				<% if params[:edit] == "aboutus" %>
 					<div class="userInformation">
 						<%= f.label :About_Us %>
-						<%= f.text_area :aboutus, :cols => 35, :rows => 13 %>
+						<%= f.text_area :aboutus, :class => 'ckeditor', :cols => 35, :rows => 13 %>
 						<%= f.submit "Update Details" %>	
 					</div>
 				<% end %>
 				<% if params[:edit] == "ournights" %>
 					<div class="userInformation">
 						<%= f.label "Edit Our Nights:" %>
-						<%= f.text_area :ournights, :cols => 35, :rows => 13 %>
+						<%=h f.text_area :ournights, :class => 'ckeditor', :cols => 35, :rows => 13 %>
 						<%= f.submit "Update Details" %>	
 					</div>
 				<% end %>
 				<% if params[:edit] == "contactus" %>
 					<div class="userInformation">
 						<%= f.label "Edit Contact Us Page:" %>
-						<%= f.text_area :contactus, :cols => 35, :rows => 13 %>
+						<%= f.text_area :contactus, :class => 'ckeditor', :cols => 35, :rows => 13 %>
 						<%= f.submit "Update Details" %>	
 					</div>
 				<% end %>

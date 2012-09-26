@@ -11,13 +11,13 @@
 		</div>
 	</div>
   <% end %>
-	<table id="TableNewsContent">
+	<table class="newTable">
 		<tr>
 			<th>
 				<%= f.label :title %>
 			</th>
 			<td>
-				<%= f.text_field :title, :size=>"130x10" %>
+				<%= f.text_field :title %>
 			</td>
 		</tr>
 		<tr>
@@ -25,7 +25,7 @@
 				<%= f.label :content, "Details" %>
 			</th>
 			<td>
-				<%= f.text_area :content, :size=>"100x10" %>
+				<%= f.text_area :content, :size=>"25x15" %>
 			</td>
 		</tr>
 		<tr>
