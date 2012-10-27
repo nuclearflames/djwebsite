@@ -80,14 +80,9 @@
 				<% end %>
 				<% if params[:edit] == "administrator" %>
 					<div class="userInformation">
-							<%= f.label :administrator %>
-							<%= f.check_box :administrator %>
-							<br />
-							<%= f.label :email %>
-							<%= f.text_field :email %>
-							<%= f.label :email_confirmation %>
-							<%= f.text_field :email_confirmation %>
-							<%= f.submit "Update Details", :name => 'emailconfirmation[save]' %>
+						<%= f.label :administrator %>
+						<%= f.check_box :administrator %>
+						<%= f.submit "Update Details" %>	
 					</div>
 				<% end %>
 		<% end %>
