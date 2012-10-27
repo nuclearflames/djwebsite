@@ -73,8 +73,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-	{:action=> "logout"}
 	RegistrationMailer.registration_email(@user).deliver
+	{:action=> "/logout"}
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
