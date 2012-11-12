@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914223453) do
+ActiveRecord::Schema.define(:version => 20121112194813) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20120914223453) do
     t.boolean  "administrator",       :default => false
     t.boolean  "activated",           :default => false
     t.string   "alias"
-    t.string   "aboutus"
+    t.text     "aboutus"
     t.string   "birthday",                               :null => false
     t.string   "email",                                  :null => false
     t.string   "persistence_token",                      :null => false
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20120914223453) do
     t.datetime "updated_at",                             :null => false
     t.string   "mphone"
     t.string   "hphone"
-    t.string   "ournights"
-    t.string   "contactus"
+    t.text     "ournights"
+    t.text     "contactus"
   end
 
 end
