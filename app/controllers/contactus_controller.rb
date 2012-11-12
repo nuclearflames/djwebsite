@@ -1,5 +1,5 @@
 class ContactusController < ApplicationController
   def index
-	@user = User.find_by_email("keane-sounds@hotmail.co.uk")
+	@user = User.find_by_email("keanesounds@hotmail.co.uk")
   end
 end
