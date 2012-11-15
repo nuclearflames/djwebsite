@@ -65,7 +65,7 @@
 				<%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>
 			</span>
 			<span id="notice">
-				| <%= notice %>
+				<%= notice %>
 			</span>
 		</div>
 	</div>

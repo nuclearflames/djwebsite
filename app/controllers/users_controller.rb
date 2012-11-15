@@ -26,33 +26,39 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-	if current_user 
-		@user = User.find(current_user) 
-	end
-	if !params[:code]
-	    @user = User.new
+	@allowNewUsers = false
+	if @allowNewUsers == false
+		redirect_to :controller => 'home'
+		flash[:notice] = 'Registering is currently disabled, thank you.' 
+	else
+		if current_user 
+			@user = User.find(current_user) 
+		end
+		if !params[:code]
+		    @user = User.new
 
-	    respond_to do |format|
-	      format.html # new.html.erb
-	      format.json { render json: @user }
-	    end
-    
-	else code = params[:code]
-		if code
-			code_components = code.split(/_/)
-			if code_components.length == 2
-				@user = User.find(code_components[0])
-				if @user and @user.verify_id_digest(code_components[1])
-					@user.activated = true
-					@user.save
-					respond_to do |format|
-						flash[:notice] = 'Welcome! You are a valid user, you can now logon.'
-						format.html {redirect_to(:controller => 'home', :action => 'index')}
+		    respond_to do |format|
+		      format.html # new.html.erb
+		      format.json { render json: @user }
+		    end
+	    
+		else code = params[:code]
+			if code
+				code_components = code.split(/_/)
+				if code_components.length == 2
+					@user = User.find(code_components[0])
+					if @user and @user.verify_id_digest(code_components[1])
+						@user.activated = true
+						@user.save
+						respond_to do |format|
+							flash[:notice] = 'Welcome! You are a valid user, you can now logon.'
+							format.html {redirect_to(:controller => 'home', :action => 'index')}
+						end
 					end
 				end
-			end
-		end	
-	end	    
+			end	
+		end	    
+	end
   end
 
   # GET /users/1/edit
@@ -70,17 +76,16 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-
     respond_to do |format|
-      if @user.save
-	RegistrationMailer.registration_email(@user).deliver
-	{:action=> "/logout"}
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+	if @user.save
+		RegistrationMailer.registration_email(@user).deliver
+		{:action=> "/logout"}
+		format.html { redirect_to @user, notice: 'User was successfully created.' }
+		format.json { render json: @user, status: :created, location: @user }
+	      else
+		format.html { render action: "new" }
+		format.json { render json: @user.errors, status: :unprocessable_entity }
+	end
     end
   end
 
