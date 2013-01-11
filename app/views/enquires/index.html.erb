@@ -1,10 +1,10 @@
 <div>
-	<span>
-	Fill out our enquiries form to email us for information:
-	</span>
+	<h2>
+	Fill out this area with your details to email the DJ!:
+	</h2>
 	<%= form_tag(:action => 'new') do %>
-		<%= text_area_tag "enquires[description]" %>
+		<%= text_area_tag "enquires[description]", nil, :id=>"enquires_form_Area" %>
 		
-		<%= submit_tag "Send" %>
+		<%= submit_tag "Make the Enquiry!", :class => "send_buttons" %>
 	<% end %>
 </div>

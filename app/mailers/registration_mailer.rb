@@ -1,5 +1,5 @@
 class RegistrationMailer < ActionMailer::Base
-  default from: "nuclearflamesweb-djwebsite@yahoo.com"
+  default from: "nuclearflamesweb-keanesounds@yahoo.com"
 
 EMAIL_VERIFICATION_URL = 'http://keane-sounds.com/users/new?code='
   
