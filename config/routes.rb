@@ -1,4 +1,5 @@
 Djwebsite::Application.routes.draw do
+
   get "aboutus/index"
 
   get "testimonials/index"
@@ -38,8 +39,6 @@ Djwebsite::Application.routes.draw do
   resources :news
   
   resources :events
-
-  get "home/index"
 
 get "enquies/index"
 
@@ -108,4 +107,6 @@ post "enquires/new"
 	match "/login" => "user_sessions#new", :as => 'login'
 	match "/logout" => "user_sessions#destroy", :as => "logout"
 	match '/users/new?code=' => 'users#new'
+  match "/404", :to => "error_templates#error_404"
+
 end

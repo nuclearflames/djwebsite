@@ -7,6 +7,19 @@ module ApplicationHelper
 		end
 	end
 	
+	def isHomepage(url)
+		if url == "/"
+			return true
+		else
+			return false
+		end
+	end
+
+	def processBreadcrumb(url)
+		splitUrl = url.split("/")
+		return splitUrl[1]
+	end
+
 	def isAdmin
 		if current_user
 			@user = User.find(current_user)

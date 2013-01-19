@@ -1,15 +1,15 @@
-/*
-  *= require_self
-*/
-
 @import "variables";
 
 body {
   background-color: $black;
-  font-size: 12px;
+  font-size: 16px;
   font-family: "Arial","Times New Roman","Comic Sans MS";
   color: $white;
   z-index: -1;
+}
+
+div {
+  background-repeat: no-repeat;
 }
 
 a {
@@ -20,38 +20,6 @@ a {
   &:hover {
     color: $grey;
   }
-}
-
-#error_explanation {
-  position: absolute;
-  bottom: 0px;
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  background-color: $magenta;
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 0px 5px 5px 15px;
-    font-size: 12px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: $white; 
-  }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-    color: $red;
-    display:block;
-    } 
-}
-
-#notice {
-  position: relative;
-  background-color: $grey;
-  color: white;
-  left: 10px;
 }
 
 #mainField {
@@ -66,230 +34,287 @@ a {
   z-index: 0;
   border-top: 1px solid;
   border-bottom: 1px solid;
-}
-
-#menuBarBottoms {
-  position: absolute;
-  top: 460px;
-  left: 330px;
-}
-
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 10px;
-  height: 300px;
-}
-
-.bookNow {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  z-index: 2;
-}
-
-#bookNowText {
-  position: absolute;
-  left: 65px;
-  bottom: 80px;
-  z-index: 3;
-  font-size: 40px;
-}
-
-#hands {
-  width: 500px;
-}
-
-.handsImage {
-  position: absolute;
-  z-index: -1;
-  right: 0px;
-  bottom: 0px;
-}
-
-.barText {
-  position: absolute;
-  z-index: 1;
-  top: 10px;
-  font-size: 25px;
-}
-
-#aboutUs {
-  left: 25px;
-}
-
-#ourNights {
-  left: 170px;
-}
-
-#contactUs {
-  left: 320px;
-}
-
-#testimonials {
-  left: 463px;
-}
-
-#mainMenu {
-  position: absolute;
-  right: 0px;
-  bottom: 350px;
-  width: 650px;
-  ul {
+  #error_explanation {
     position: absolute;
+    bottom: 0px;
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    background-color: $magenta;
+    h2 {
+      text-align: left;
+      font-weight: bold;
+      padding: 0px 5px 5px 15px;
+      font-size: 12px;
+      margin-bottom: 0px;
+      background-color: #c00;
+      color: $white; 
+    }
+    ul li {
+      font-size: 12px;
+      list-style: square;
+      color: $red;
+      display:block;
+      } 
+  }
+  #breadcrumb {
+    position: absolute;
+    left: 5px;
+    top: 450px;
     float: left;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+    a {
+      float: left;
+      text-decoration: none;
+      color: white;
+    }
+    .breadcrumbArrow {
+      float: left;
+      background-image: image_url("breadcrumb-white.png");
+      height: 10px;
+      width: 10px;
+      margin: 5px 0px 0px 5px;
+    }
   }
-  li {
-    display: inline;
+  #menuBarBottoms {
+    position: absolute;
+    top: 460px;
+    left: 330px;
   }
-}
 
-.menuBarsImages, .menuBars {
-  width: 150px;
-  border: none;
-}
+  .logo {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    height: 300px;
+  }
 
-#menuSelectBars {
-  position: relative;
-  top: 60px;
-}
+  #bookNow {
+    position: absolute;
+    background-image: image_url("DJ_BookNowBG.png");
+    height: 298px;
+    width: 380px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2;
+    #bookNowText {
+      position: absolute;
+      left: 65px;
+      bottom: 80px;
+      z-index: 3;
+      font-size: 40px;
+    }
+  }
 
-#infoBar {
-  position: absolute;
+  .handsImage {
+    position: absolute;
+    background-image: image_url("DJ_hands.png");
+    z-index: -1;
+    right: 0px;
+    height: 160px;
+    width: 745px;
+    bottom: 0px;
+  }
+
+
+  #aboutUs {
+    left: 25px;
+  }
+
+  #ourNights {
+    left: 170px;
+  }
+
+  #contactUs {
+    left: 320px;
+  }
+
+  #testimonials {
+    left: 463px;
+  }
+
+  #mainMenu {
+    position: absolute;
+    right: 0px;
+    bottom: 350px;
+    width: 650px;
+    .menuBarsImages, .menuBars {
+      float: left;
+      width: 150px;
+      padding-top: 10px;
+      z-index: 0;
+      margin-right: 3px;
+    }
+    #menuSelectBars {
+      position: relative;
+      top: 60px;
+        .menuBars {
+        height: 150px;
+        background-image: image_url("DJ_menu_drop.png");
+      }
+    }
+    ul {
+      position: absolute;
+      float: left;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+    li {
+      display: inline;
+      .barText {
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        font-size: 25px;
+      }
+      .menuBarsImages {
+        height: 50px;
+        z-index: 2;
+        background-image: image_url("DJ_menu.png");
+      }
+    }
+  }
+  #infoBar {
+    position: absolute;
+    right: 0px;
+    #notice {
+      position: relative;
+      background-color: $grey;
+      color: white;
+      right: 10px;
+    }
+  }
 }
 
 #yield {
   position: absolute;
-  top: 20px;
-  right: 0px;
-  height: 350px;
-  width: 500px;
-}
-
-#leftBar {
-  position: absolute;
+  top: 5px;
   left: 0px;
-  width: 225px;
-}
-
-#rightBar {
-  position: absolute;
-  left: 250px;
-  width: 225px;
-}
-
-/*News*/
-
-#NewsTable {
-  position: relative;
-  left: 10px;
-  width: 215px;
-}
-
-.tableNews {
-  position: relative;
-  left: 5px;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  width: 215px;
-  th {
-    font-size: 16px;
-    text-align: left;
+  width: 500px;
+  #leftBar {
+    position: absolute;
+    left: 0px;
+    width: 225px;
   }
-}
-
-.tableTD {
-  position: relative;
-  left: 10px;
-}
-
-.headers {
-  position: relative;
-  font-size: 26px;
-}
-
-.newTable {
-  width: 100px;
-}
-
-#eventDescription {
-  position: relative;
-}
-
-#eventDate {
-  position: relative;
-  left: 65px;
-}
-
-.tableBottomBorders {
-  border-bottom: 1px solid;
-}
-
-#indexContent {
-  position: absolute;
-  width: 450px;
-}
-
-#indexContentTitle {
-  position: relative;
-  width: 450px;
-  font-size: 20px;
-  padding-bottom: 3px;
-}
-
-#indexContentContent {
-  position: relative;
-  left: 5px;
-  background-color: #212121;
-  width: 450px;
-  padding-bottom: 5px;
-}
-
-#eventTime {
-  position: absolute;
-  right: 0px;
-}
-
-.userInformation {
-  position: absolute;
-  top: 80px;
-  left: -500px;
-  background-color: black;
-}
-
-#editSubmit {
-  position: absolute;
-  bottom: 50px;
-}
-
-#editMenu {
-  position: absolute;
-  top: -25px;
-  right: 0px;
-  width: 200px;
-  li {
-    display: block;
+  #enquires {
+    position:absolute;
+    top: 10px;
   }
-}
+  #rightBar {
+    position: absolute;
+    left: 250px;
+    width: 225px;
+  }
+  #NewsTable {
+    position: relative;
+    left: 10px;
+    width: 215px;
+  }
 
-#aboutustext {
-  width: 400px;
-  height: 350px;
-}
+  .tableNews {
+    position: relative;
+    left: 5px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    width: 215px;
+    th {
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+  .tableTD {
+    position: relative;
+    left: 10px;
+  }
 
-#enquires_form_Area {
-  width: 400px;
-  height: 300px;
-}
+  .headers {
+    position: relative;
+    font-size: 26px;
+  }
 
-.send_buttons {
-  position: relative;
-  font-size: 15px;
-  font-color: $white;
-  width: 400px;
-  height: 50px;
+  .newTable {
+    width: 100px;
+  }
+
+  #eventDescription {
+    position: relative;
+  }
+
+  #eventDate {
+    position: relative;
+    left: 65px;
+  }
+
+  .tableBottomBorders {
+    border-bottom: 1px solid;
+  }
+
+  #indexContent {
+    position: absolute;
+    width: 450px;
+  }
+
+  #indexContentTitle {
+    position: relative;
+    width: 450px;
+    font-size: 20px;
+    padding-bottom: 3px;
+  }
+
+  #indexContentContent {
+    position: relative;
+    left: 5px;
+    background-color: #212121;
+    width: 450px;
+    padding-bottom: 5px;
+  }
+
+  #eventTime {
+    position: absolute;
+    right: 0px;
+  }
+
+  .userInformation {
+    position: absolute;
+    top: 80px;
+    left: -500px;
+    background-color: black;
+  }
+
+  #editSubmit {
+    position: absolute;
+    bottom: 50px;
+  }
+
+  #editMenu {
+    position: absolute;
+    top: -25px;
+    right: 0px;
+    width: 200px;
+    li {
+      display: block;
+    }
+  }
+
+  #aboutustext {
+    width: 400px;
+    height: 350px;
+  }
+
+  #enquires_form_Area {
+    width: 450px;
+    height: 250px;
+    background-color: $black;
+    color: $white;
+  }
+
+  .send_buttons {
+    position: relative;
+    font-size: 15px;
+    font-color: $white;
+    width: 457px;
+    height: 50px;
+  }
 }

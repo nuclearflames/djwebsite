@@ -1,87 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Keane-sounds</title>
-	<%= stylesheet_link_tag "application" %>
-	<%= javascript_include_tag "application" %>
-	<%= csrf_meta_tags %>
-	<meta name="description" content="Keane-sounds.com, a startup DJ company from London, ready to provide a great nights experience">
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-36533511-1']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
-	</script>
+  <title>Keane-sounds</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="Keane-sounds.com, a startup DJ company from London, ready to provide a great nights experience">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36533511-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
 <body>
-	<div id="mainField">
-		<div id="logo">
-			<%= image_tag('DJ_0000_Logo.png', :class=>"logo") %>
-		</div>
-		<div id="yield">
-			<%= yield %>
-		</div>
-		<div id="mainMenu">
-			<div id="menuSelect">
-				<ul>
-					<li>
-						<%= link_to image_tag('DJ_0002s_0003_menu1.png', :class=>"menuBarsImages"), :action => "index", :controller => "aboutus" %>
-						<%= link_to('About Us', {:action => "index", :controller => "aboutus"}, {:class=>"barText", :id=>"aboutUs"}) %>
-					</li>
-					<li>
-						<%= link_to image_tag('DJ_0002s_0002_menu2.png', :class=>"menuBarsImages"), :action => "index", :controller => "ournights" %>
-						<%= link_to('Our Nights', {:action => "index", :controller => "ournights"}, {:class=>"barText", :id=>"ourNights"}) %>
-					</li>
-					<li>
-						<%= link_to image_tag('DJ_0002s_0001_menu3.png', :class=>"menuBarsImages"), :action => "index", :controller => "contactus" %>
-						<%= link_to('Contact Us', {:action => "index", :controller => "contactus"}, {:class=>"barText", :id=>"contactUs"}) %>
-					</li>
-					<li>
-						<%= link_to image_tag('DJ_0002s_0000_menu4.png', :class=>"menuBarsImages"), :action => "index", :controller => "testimonials" %>
-						<%= link_to('Testimonials', {:action => "index", :controller => "testimonials"}, {:class=>"barText", :id=>"testimonials"}) %>
-					</li>
-				</ul>
-			</div>
-			<div id="menuSelectBars">
-				<ul>
-					<li>
-					<%= image_tag('DJ_0001s_0000_drop1.png', :class=>"menuBars") %>
-					</li>
-					<li>
-					<%= image_tag('DJ_0001s_0001_drop2.png', :class=>"menuBars") %>
-					</li>
-					<li>
-					<%= image_tag('DJ_0001s_0002_drop3.png', :class=>"menuBars") %>
-					</li>
-					<li>
-					<%= image_tag('DJ_0001s_0003_drop4.png', :class=>"menuBars") %>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div id="bookNow">
-			<%= image_tag('DJ_0000s_0001_BookNowBG.png', :class=>'bookNow') %>
-			<%= link_to('Book Now', {:action => "index", :controller => "enquires"}, :id=>"bookNowText") %>
-			
-		</div>
-		<div id="hands">
-			<%= image_tag('DJ_0001_hands.png', :class=>'handsImage') %>
-		</div>
-		<div id="infoBar">
-			<span>
-				<%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>
-			</span>
-			<span id="notice">
-				<%= notice %>
-			</span>
-		</div>
-	</div>
+  <div id="mainField">
+    <div id="logo">
+      <%= image_tag('DJ_0000_Logo.png', :class=>"logo") %>
+    </div>
+    <div id="yield">
+        <%= yield %>
+    </div>
+    <div id="breadcrumb">
+      <% if !isHomepage(request.fullpath) %><%= link_to "Home", "/" %><div class="breadcrumbArrow"></div><%= link_to processBreadcrumb(request.fullpath) %><% end %>
+    </div>
+    <div id="mainMenu">
+      <div id="menuSelect">
+        <ul>
+          <li>
+            <div class="menuBarsImages"><%= link_to('About Us', {:action => "index", :controller => "aboutus"}, {:class=>"barText", :id=>"aboutUs"}) %></div>
+          </li>
+          <li>
+            <div class="menuBarsImages"><%= link_to('Our Nights', {:action => "index", :controller => "ournights"}, {:class=>"barText", :id=>"ourNights"}) %></div>
+          </li>
+          <li>
+            <div class="menuBarsImages"><%= link_to('Contact Us', {:action => "index", :controller => "contactus"}, {:class=>"barText", :id=>"contactUs"}) %></div>
+          </li>
+          <li>
+            <div class="menuBarsImages"><%= link_to('Testimonials', {:action => "index", :controller => "testimonials"}, {:class=>"barText", :id=>"testimonials"}) %></div>
+          </li>
+        </ul>
+      </div>
+      <div id="menuSelectBars">
+        <ul>
+          <li>
+            <div class="menuBars"></div>
+          </li>
+          <li>
+            <div class="menuBars"></div>
+          </li>
+          <li>
+            <div class="menuBars"></div>
+          </li>
+          <li>
+            <div class="menuBars"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="bookNow">
+        <%= link_to('Book Now', {:action => "index", :controller => "enquires"}, :id=>"bookNowText") %>
+        
+    </div>
+    <div id="hands">
+        <div class="handsImage"></div>
+    </div>
+    <div id="infoBar">
+        <span id="notice">
+            <%= notice %>
+        </span>
+        <span>
+            <%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>
+        </span>
+    </div>
+  </div>
 </body>
 </html>
