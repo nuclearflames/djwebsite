@@ -14,3 +14,7 @@
 //= require jquery-ui
 //= require_tree 
 //= require ckeditor-jquery
+
+$(window).on("resize", function(event){
+  console.log( $(this).width() );
+});
