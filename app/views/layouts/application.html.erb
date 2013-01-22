@@ -20,42 +20,48 @@
 </head>
 <body>
   <div id="mainField">
-    <div id="infoBar">
-      <div id="breadcrumb">
-        <% if !isHomepage(request.fullpath) %><%= link_to "Home", "/" %><div class="breadcrumbArrow"></div><%= link_to processBreadcrumb(request.fullpath) %><% end %>
-      </div>
-        <span id="notice">
+    <div id="header">
+      <% if !isHomepage(request.fullpath) %>
+        <div id="breadcrumb">
+          <%= link_to "Home", "/" %><div class="breadcrumbArrow"></div><%= link_to processBreadcrumb(request.fullpath) %>
+        </div>
+      <% end %>
+      <% if notice %>
+        <div id="notice">
             <%= notice %>
-        </span>
-        <span>
-            <%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>
-        </span>
-    </div>
-    <div id="logo">
-      <div class="logo"></div>
-    </div>
-    <div id="yield">
-        <%= yield %>
-    </div>
-    <div id="mainMenu">
-      <div id="menuSelect">
-            <div class="menuBarsImages"><%= link_to('About Us', {:action => "index", :controller => "aboutus"}, {:class=>"barText", :id=>"aboutUs"}) %></div>
-            <div class="menuBarsImages"><%= link_to('Our Nights', {:action => "index", :controller => "ournights"}, {:class=>"barText", :id=>"ourNights"}) %></div>
-            <div class="menuBarsImages"><%= link_to('Contact Us', {:action => "index", :controller => "contactus"}, {:class=>"barText", :id=>"contactUs"}) %></div>
-            <div class="menuBarsImages"><%= link_to('Testimonials', {:action => "index", :controller => "testimonials"}, {:class=>"barText", :id=>"testimonials"}) %></div>
-      </div>
-      <div id="menuSelectBars">
-            <div class="menuBars"></div>
-            <div class="menuBars"></div>
-            <div class="menuBars"></div>
-            <div class="menuBars"></div>
+        </div>
+      <% end %>
+      <div id="login">
+          <%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>
       </div>
     </div>
-    <div id="bookNow">
-        <%= link_to('Book Now', {:action => "index", :controller => "enquires"}, :id=>"bookNowText") %>
+    <div id="content">
+      <div id="yield">
+          <%= yield %>
+      </div>
+      <div id="logo">
+      </div>
     </div>
-    <div id="hands">
-        <div class="handsImage"></div>
+    <div id="footer">
+      <div id="bookNow">
+          <%= link_to('Book Now', {:action => "index", :controller => "enquires"}, :id=>"bookNowText") %>
+      </div>
+      <div id="mainMenu">
+        <div id="menuSelect">
+          <div class="menuBarsImages"><%= link_to('About Us', {:action => "index", :controller => "aboutus"}, {:class=>"barText", :id=>"aboutUs"}) %></div>
+          <div class="menuBarsImages"><%= link_to('Our Nights', {:action => "index", :controller => "ournights"}, {:class=>"barText", :id=>"ourNights"}) %></div>
+          <div class="menuBarsImages"><%= link_to('Contact Us', {:action => "index", :controller => "contactus"}, {:class=>"barText", :id=>"contactUs"}) %></div>
+          <div class="menuBarsImages"><%= link_to('Testimonials', {:action => "index", :controller => "testimonials"}, {:class=>"barText", :id=>"testimonials"}) %></div>
+        </div>
+        <div id="menuSelectBars">
+            <div class="menuBars"></div>
+            <div class="menuBars"></div>
+            <div class="menuBars"></div>
+            <div class="menuBars"></div>
+        </div>
+        <div id="handsImage">
+        </div>
+      </div>
     </div>
   </div>
 </body>

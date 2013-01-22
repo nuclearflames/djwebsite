@@ -27,14 +27,14 @@ a {
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    width: 975px;
-    height: 800px;
+    width: 1000px;
+    min-height: 800px;
     background-color: $black;
     z-index: 0;
     border-top: 1px solid;
     border-bottom: 1px solid;
     #error_explanation {
-      position: absolute;
+      position: relative;
       bottom: 0px;
       width: 450px;
       border: 2px solid red;
@@ -57,49 +57,237 @@ a {
         display:block;
         } 
     }
-    #menuBarBottoms {
-      position: absolute;
-      top: 460px;
-      left: 330px;
-    }
-
-    .logo {
-      position: absolute;
-      top: 50px;
-      right: 10px;
-      height: 289px;
-      width: 400px;
-      background-image: image_url("DJ_logo.png");
-    }
-
-    #bookNow {
-      position: absolute;
-      background-image: image_url("DJ_BookNowBG.png");
-      height: 298px;
-      width: 380px;
-      left: 0px;
-      bottom: 0px;
-      z-index: 2;
-      #bookNowText {
+    #header {
+      position: relative;
+      height: 20px;
+      font-size: 16px;
+      #breadcrumb {
+        font-size: 16px;
+        left: 0px;
+        a {
+          float: left;
+          text-decoration: none;
+          color: white;
+        }
+        .breadcrumbArrow {
+          float: left;
+          background-image: image_url("breadcrumb-white.png");
+          height: 10px;
+          width: 10px;
+          margin: 5px 0px 0px 5px;
+        }
+      }
+      #notice {
+        position: relative;
+        background-color: $grey;
+        color: white;
+        right: 10px;
+      }
+      #login {
         position: absolute;
-        left: 65px;
-        bottom: 80px;
-        z-index: 3;
-        font-size: 40px;
+        right: 0px;
       }
     }
+    #content {
+      position:relative;
+      min-height: 490px;
+      #yield {
+        position: relative;
+        float: left;
+        width: 590px;
+        z-index: 5;
+        #enquires {
+          position:relative;
+          top: 10px;
+        }
+        #leftBar, #rightBar {
+          position: relative;
+          float: left;
+          padding-left: 10px;
+          .headers {
+            position: relative;
+            font-size: 26px;
+          }
+          .tableNews {
+            position: relative;
+            left: 5px;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            width: 215px;
+            th {
+              font-size: 16px;
+              text-align: left;
+            }
+          }
+        }
+        #NewsTable {
+          position: relative;
+          left: 10px;
+          width: 215px;
+        }
+        .tableTD {
+          position: relative;
+          left: 10px;
+        }
 
-    .handsImage {
-      position: absolute;
-      background-image: image_url("DJ_hands.png");
-      z-index: -1;
-      right: 0px;
-      height: 160px;
-      width: 745px;
-      bottom: 0px;
+        .newTable {
+          width: 100px;
+        }
+
+        #eventDescription {
+          position: relative;
+        }
+
+        #eventDate {
+          position: relative;
+          left: 65px;
+        }
+
+        .tableBottomBorders {
+          border-bottom: 1px solid;
+        }
+
+        #indexContent {
+          position: relative;
+          width: 450px;
+        }
+
+        #indexContentTitle {
+          position: relative;
+          width: 450px;
+          font-size: 20px;
+          padding-bottom: 3px;
+        }
+
+        #indexContentContent {
+          position: relative;
+          left: 5px;
+          background-color: #212121;
+          width: 450px;
+          padding-bottom: 5px;
+        }
+
+        #eventTime {
+          position: relative;
+          right: 0px;
+        }
+
+        .userInformation {
+          position: relative;
+          top: 80px;
+          left: -500px;
+          background-color: black;
+        }
+
+        #editSubmit {
+          position: relative;
+          bottom: 50px;
+        }
+
+        #editMenu {
+          position: relative;
+          top: -25px;
+          right: 0px;
+          width: 200px;
+          li {
+            display: block;
+          }
+        }
+
+        #aboutustext {
+          width: 400px;
+          height: 350px;
+        }
+
+        #enquires_form_Area {
+          width: 450px;
+          height: 250px;
+          background-color: $black;
+          color: $white;
+        }
+
+        .send_buttons {
+          position: relative;
+          font-size: 15px;
+          font-color: $white;
+          width: 457px;
+          height: 50px;
+        }
+      }
+      #logo {
+        position: relative;
+        float: left;
+        top: 10px;
+        left: 10px;
+        height: 289px;
+        width: 400px;
+        background-image: image_url("DJ_logo.png");
+      }
     }
-
-
+    #footer {
+      height: 290px;
+      #bookNow {
+        position: relative;
+        float: left;
+        background-image: image_url("DJ_BookNowBG.png");
+        z-index: 2;
+        height: 290px;
+        width: 380px;
+        left: 5px;
+        #bookNowText {
+          position: absolute;
+          z-index: 3;
+          font-size: 40px;
+          left: 65px;
+          bottom: 60px;
+        }
+      }
+      #mainMenu {
+        position: relative;
+        float: left;
+        right: 0px;
+        top: -50px;
+        height: 290px;
+        .menuBarsImages, .menuBars {
+          float: left;
+          width: 150px;
+          padding-top: 10px;
+          z-index: 0;
+          margin-right: 3px;
+        }
+        #menuSelect {
+          position: relative;
+          height: 60px;
+        }
+        #menuSelectBars {
+          position: relative;
+          height: 150px;
+            .menuBars {
+            height: 150px;
+            background-image: image_url("DJ_menu_drop.png");
+          }
+        }
+        .barText {
+          position: absolute;
+          z-index: 1;
+          top: 10px;
+          font-size: 25px;
+        }
+        .menuBarsImages {
+          height: 50px;
+          z-index: 2;
+          background-image: image_url("DJ_menu.png");
+        }
+        #handsImage {
+          position: relative;
+          background-image: image_url("DJ_hands.png");
+          z-index: -1;
+          height: 160px;
+          top: -30px;
+          left: -5px;
+        }
+      }
+    }
     #aboutUs {
       left: 25px;
     }
@@ -115,203 +303,15 @@ a {
     #testimonials {
       left: 463px;
     }
-
-    #mainMenu {
-      position: absolute;
-      right: 0px;
-      bottom: 150px;
-      .menuBarsImages, .menuBars {
-        float: left;
-        width: 150px;
-        padding-top: 10px;
-        z-index: 0;
-        margin-right: 3px;
-      }
-      #menuSelectBars {
-        position: relative;
-          .menuBars {
-          height: 150px;
-          background-image: image_url("DJ_menu_drop.png");
-        }
-      }
-      .barText {
-        z-index: 1;
-        top: 10px;
-        font-size: 25px;
-      }
-      .menuBarsImages {
-        height: 50px;
-        z-index: 2;
-        background-image: image_url("DJ_menu.png");
-      }
-    }
-    #infoBar {
-      position: absolute;
-      right: 0px;
-      font-size: 16px;
-      #notice {
-        position: relative;
-        background-color: $grey;
-        color: white;
-        right: 10px;
-      }
-      #breadcrumb {
-        font-size: 16px;
-        a {
-          float: left;
-          text-decoration: none;
-          color: white;
-        }
-        .breadcrumbArrow {
-          float: left;
-          background-image: image_url("breadcrumb-white.png");
-          height: 10px;
-          width: 10px;
-          margin: 5px 0px 0px 5px;
-        }
-      }
-    }
-  }
-
-  #yield {
-    position: absolute;
-    top: 5px;
-    left: 0px;
-    width: 500px;
-    z-index: 5;
-    #leftBar {
-      position: absolute;
-      left: 0px;
-      width: 225px;
-    }
-    #enquires {
-      position:absolute;
-      top: 10px;
-    }
-    #rightBar {
-      position: absolute;
-      left: 250px;
-      width: 225px;
-    }
-    #NewsTable {
-      position: relative;
-      left: 10px;
-      width: 215px;
-    }
-
-    .tableNews {
-      position: relative;
-      left: 5px;
-      border-top: 1px solid;
-      border-bottom: 1px solid;
-      width: 215px;
-      th {
-        font-size: 16px;
-        text-align: left;
-      }
-    }
-    .tableTD {
-      position: relative;
-      left: 10px;
-    }
-
-    .headers {
-      position: relative;
-      font-size: 26px;
-    }
-
-    .newTable {
-      width: 100px;
-    }
-
-    #eventDescription {
-      position: relative;
-    }
-
-    #eventDate {
-      position: relative;
-      left: 65px;
-    }
-
-    .tableBottomBorders {
-      border-bottom: 1px solid;
-    }
-
-    #indexContent {
-      position: absolute;
-      width: 450px;
-    }
-
-    #indexContentTitle {
-      position: relative;
-      width: 450px;
-      font-size: 20px;
-      padding-bottom: 3px;
-    }
-
-    #indexContentContent {
-      position: relative;
-      left: 5px;
-      background-color: #212121;
-      width: 450px;
-      padding-bottom: 5px;
-    }
-
-    #eventTime {
-      position: absolute;
-      right: 0px;
-    }
-
-    .userInformation {
-      position: absolute;
-      top: 80px;
-      left: -500px;
-      background-color: black;
-    }
-
-    #editSubmit {
-      position: absolute;
-      bottom: 50px;
-    }
-
-    #editMenu {
-      position: absolute;
-      top: -25px;
-      right: 0px;
-      width: 200px;
-      li {
-        display: block;
-      }
-    }
-
-    #aboutustext {
-      width: 400px;
-      height: 350px;
-    }
-
-    #enquires_form_Area {
-      width: 450px;
-      height: 250px;
-      background-color: $black;
-      color: $white;
-    }
-
-    .send_buttons {
-      position: relative;
-      font-size: 15px;
-      font-color: $white;
-      width: 457px;
-      height: 50px;
-    }
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1000px) {
   #mainField {
     width: inherit;
-    #logo {
-      .logo {
-        position: absolute;
+    #content {
+      #logo {
+        position: relative;
         top: 50px;
         right: 10px;
         height: 143px;
@@ -319,82 +319,62 @@ a {
         background-image: image_url("DJ_logo_small.png");
       }
     }
-    #bookNow {
-      height: 235px;
-      width: 300px;
-      background-image: image_url("DJ_BookNowBG_small.png");
-      #bookNowText {
-        font-size: 30px;
-        left: 55px;
+    #footer {
+      #mainMenu {
+        position: absolute;
         bottom: 50px;
+        top: auto;
       }
-    }
-    .handsImage {
-      width: 700px;
+      #bookNow {
+        height: 235px;
+        width: 300px;
+        top: 55px;
+        background-image: image_url("DJ_BookNowBG_small.png");
+        #bookNowText {
+          font-size: 30px;
+          left: 55px;
+          bottom: 50px;
+        }
+      }
+      #handsImage {
+        right: -5px;
+      }
     }
   }
 }
 
-@media (max-width:720px) {
+@media (max-width:650px) {
   #mainField {
-    .handsImage {
-      background-image: none;
-    }
-    #yield {
-      top: 170px;
-    }
-    #logo {
-      .logo {
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        height: 143px;
-        width: 200px;
-        background-image: none;
-      }
-    }
-    #mainMenu {
-      height: 150px;
-      top: 50px;
-      left: 0px;
-      #menuSelectBars {
-        .menuBars {
-          background-image: none;
+    #footer {
+      #mainMenu {
+        .barText {
+          position: inherit;
+        }
+        #handsImage {
+          display: none;
         }
       }
-    }
-    #bookNow {
-      height: 235px;
-      width: 300px;
-      background-image: image_url("DJ_BookNowBG_small.png");
-      #bookNowText {
-        font-size: 30px;
-        left: 55px;
-        bottom: 50px;
-      }
-    }
-    .handsImage {
-      width: 700px;
     }
   }
 }
 
 @media (max-width:480px) {
-  #yield {
-    width: 320px;
-    height: 500px;
-    #enquires_form_Area  {
-      width: 300px;
+  #mainField {
+    #content {
+      #yield {
+        #leftBar, #rightBar {
+          float: none;
+        }
+      }
     }
-    .send_buttons {
-      width: 300px;
-    }
-    #leftBar {
+    #footer {
       position: relative;
-    }
-    #rightBar {
-      position: relative;
-      left: 0px;
+      #mainMenu {
+        bottom: 70px;
+        #menuSelectBars {
+          display: none;
+        }
+      }
     }
   }
 }
