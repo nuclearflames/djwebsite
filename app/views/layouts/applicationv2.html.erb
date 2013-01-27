@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keane-sounds</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="Keane-sounds.com, a startup DJ company from London, ready to provide a great nights experience">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36533511-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <div id="mainField">
+    <div id="header">
+      <% if !isHomepage(request.fullpath) %>
+        <div id="breadcrumb">
+          <%= link_to "Home", "/" %><div class="breadcrumbArrow"></div><%= link_to processBreadcrumb(request.fullpath) %>
+        </div>
+      <% end %>
+      <% if notice %>
+        <div id="notice">
+            <%= notice %>
+        </div>
+      <% end %>
+      <div id="login">
+          <%= link_to "Home", "/" %> <% if !current_user %><% end %> <% if current_user %> | <%= link_to current_user.forename.to_s, user_path(current_user) %><% end %> | <%= loginout %>
+      </div>
+    </div>
+    <div id="content">
+      <div id="yield">
+          <%= yield %>
+      </div>
+      <div id="logo">
+      </div>
+    </div>
+    <div id="footer">
+      <div id="bookNow">
+          <%= link_to('Book Now', {:action => "index", :controller => "enquires"}, :id=>"bookNowText") %>
+      </div>
+      <div id="mainMenu">
+        <div id="menuSelect">
+          <div class="menuBarsImages"><%= link_to('About Us', {:action => "index", :controller => "aboutus"}, {:class=>"barText", :id=>"aboutUs"}) %></div>
+          <div class="menuBarsImages"><%= link_to('Our Nights', {:action => "index", :controller => "ournights"}, {:class=>"barText", :id=>"ourNights"}) %></div>
+          <div class="menuBarsImages"><%= link_to('Contact Us', {:action => "index", :controller => "contactus"}, {:class=>"barText", :id=>"contactUs"}) %></div>
+          <div class="menuBarsImages"><%= link_to('Testimonials', {:action => "index", :controller => "testimonials"}, {:class=>"barText", :id=>"testimonials"}) %></div>
+        </div>
+        <div id="menuSelectBars">
+            <div class="menuBars"></div>
+            <div class="menuBars"></div>
+            <div class="menuBars"></div>
+            <div class="menuBars"></div>
+        </div>
+        <div id="handsImage">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
